@@ -1,5 +1,5 @@
-#import * from './generated/prisma.graphql'
-#import * from './schema_prep.grapql'
+# import * from "/generated/prisma.graphql"
+# import * from "schema_prep.graphql"
 
 type SuccessMessage {
     message: String
