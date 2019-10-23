@@ -9,7 +9,7 @@ const server = createServer();
 //Handles cookie (JWT) with express
 server.express.use(cookieParser());
 
-//started
+//startefdafsafsafsad
 //deccode JWT so we can get userId on each request
 server.express.use((req, res, next) => {
     const {token} = req.cookies;
