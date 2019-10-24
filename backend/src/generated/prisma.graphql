@@ -1,5 +1,5 @@
 # source: https://sickfits-dev-e21079fa8a.herokuapp.com/sick-fits-prod/prod
-# timestamp: Wed Oct 23 2019 14:33:51 GMT+0200 (GMT+02:00)
+# timestamp: Thu Oct 24 2019 10:53:19 GMT+0200 (GMT+02:00)
 
 type AggregateCartItem {
   count: Int!
@@ -329,6 +329,8 @@ type Item implements Node {
   image: String
   largeImage: String
   price: Int!
+  createdAt: DateTime
+  UpdatedAt: DateTime
   user: User!
 }
 
@@ -379,6 +381,10 @@ enum ItemOrderByInput {
   largeImage_DESC
   price_ASC
   price_DESC
+  createdAt_ASC
+  createdAt_DESC
+  UpdatedAt_ASC
+  UpdatedAt_DESC
 }
 
 type ItemPreviousValues {
@@ -388,6 +394,8 @@ type ItemPreviousValues {
   image: String
   largeImage: String
   price: Int!
+  createdAt: DateTime
+  UpdatedAt: DateTime
 }
 
 type ItemSubscriptionPayload {
@@ -700,6 +708,50 @@ input ItemWhereInput {
 
   """All values greater than or equal the given value."""
   price_gte: Int
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  UpdatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  UpdatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  UpdatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  UpdatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  UpdatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  UpdatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  UpdatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  UpdatedAt_gte: DateTime
   user: UserWhereInput
 }
 

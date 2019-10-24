@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
 import {CURRENT_USER_QUERY} from './User';
+import Router from 'next/router';
 
 
 const SIGNIN_MUATION = gql`
@@ -45,6 +46,10 @@ class Signin extends Component {
                     console.log(error);
                 }
                 this.setState({name: '', email: '', password: ''});
+                Router.push({
+                    pathname: '/items',
+                    query: {page: '1'}
+                });
             })}>
                 <fieldset disabled={loading} aria-busy={loading}>
                     <h2>Sign in</h2>

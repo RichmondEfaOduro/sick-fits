@@ -14,7 +14,7 @@ const SINGLE_ORDER_QUERY = gql`
       id
       charge
       total
-      createAt
+      createdAt
       user {
         id
       }

@@ -10,10 +10,10 @@ import ErrorMessage from './ErrorMessage'
 
 const USER_ORDERS_QUERY = gql`
   query USER_ORDERS_QUERY {
-    orders(orderBy: createAt_DESC) {
+    orders(orderBy: createdAt_DESC) {
       id
       total
-      createAt
+      createdAt
       items {
         id
         title
