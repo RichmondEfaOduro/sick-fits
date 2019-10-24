@@ -38,7 +38,10 @@ const UPDATE_PERMISSIONS_MUTATION = gql`
 
 const Permissions = props => (
     <Query query={ALL_USERS_QUERY}> 
-        {({data, loading, error}) => (
+        {({data, loading, error}) => {
+        if(loading) return <p>Loading....</p>
+        if(error) return <Error error={error} />
+        return(
             <div>
                 <Error error={error} />
                 <div>
@@ -48,7 +51,7 @@ const Permissions = props => (
                             <tr>
                                 <th>name</th>
                                 <th>email</th>
-                                {possiblePermissions.map(permission => 
+                                {possiblePermissions && possiblePermissions.map(permission => 
                                     <th key={permission}>
                                         {permission}
                                     </th>
@@ -64,7 +67,7 @@ const Permissions = props => (
                     </Table>
                 </div>
             </div>
-        )}
+        )}}
     </Query>
 );
 

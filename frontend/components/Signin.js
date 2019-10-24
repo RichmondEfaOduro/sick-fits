@@ -41,15 +41,14 @@ class Signin extends Component {
                 e.preventDefault();
                 try {
                     await signIn();
+                    Router.push({
+                        pathname: '/items'
+                    });
                 }catch(error) {
                     alert('Error while trying to create account, please try again');
                     console.log(error);
                 }
                 this.setState({name: '', email: '', password: ''});
-                Router.push({
-                    pathname: '/items',
-                    query: {page: '1'}
-                });
             })}>
                 <fieldset disabled={loading} aria-busy={loading}>
                     <h2>Sign in</h2>
